@@ -1,0 +1,117 @@
+:root {
+  font-size: 18px;
+  font-family: Plus Jakarta Sans,sans-serif;
+  box-sizing: border-box;
+  color: white;
+  --charadeLighter: #2B2C37;
+  --charadeDarker: #20212D;
+  --border: #3E3F4E;
+  --lightPurple: #635FC7;
+  --grey: #828fa3;
+  --titleBallColor: #49C4E5;
+  --columnCardBg: #252631;
+  --deleteLabel: #ea5555;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+button {
+  color: black;
+}
+.page {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 9fr;
+  grid-template-areas: "logo header"
+    "sidebar content";
+  overflow: hidden;
+}
+.page > header {
+  grid-area: header;
+  background-color: var(--charadeLighter);
+  border: 1px solid var(--border);
+}
+.page > div {
+  grid-area: logo;
+  padding: 2rem;
+  background-color: var(--charadeLighter);
+}
+img {
+  margin: 0 auto;
+}
+.page > nav {
+  grid-area: sidebar;
+  background-color: var(--charadeLighter);
+  border: 1px solid var(--border);
+}
+.page > main {
+  grid-area: content;
+  background-color: var(--charadeDarker);
+  overflow: auto;
+}
+.icon {
+  vertical-align: -webkit-baseline-middle;
+  margin: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.columnEntry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+header {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header button {
+  all: unset;
+  padding: 0.75rem;
+  border-radius: 25px;
+  color: white;
+  background-color: var(--lightPurple);
+  font-size: 1rem;
+}
+header button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: 10rem;
+  background-color: var(--charadeDarker);
+}
+.dropdownMenu span:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.subtasksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.subtasksContainer div {
+  background-color: var(--charadeDarker);
+  border-radius: 10px;
+}
