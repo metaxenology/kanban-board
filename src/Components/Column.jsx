@@ -26,8 +26,9 @@ export default function Column({
   };
 
   const handleClose = (event) => {
-    event.stopPropagation();
+    setViewedTask("");
     setOpen(false);
+    event.stopPropagation();
   };
 
   const handleDrop = (event) => {
@@ -72,7 +73,7 @@ export default function Column({
           />
           {viewedTask === task.title ? (
             <TaskViewModal
-              key={task.title}
+              key={task.title + idx}
               open={open}
               handleClose={handleClose}
               task={task}
@@ -90,8 +91,3 @@ export default function Column({
     </div>
   );
 }
-
-/*
-  What's the other logic in here?
-  {task.title === openedTed = }
-*/
