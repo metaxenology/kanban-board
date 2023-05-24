@@ -6,8 +6,8 @@ import {
   ModalBox,
   MyButton,
   MyTypography,
-} from "./StyledModalComponents";
-import crossIcon from "../assets/icon-cross.svg";
+} from "../StyledModalComponents";
+import crossIcon from "../../assets/icon-cross.svg";
 
 import { useState, useRef } from "react";
 
@@ -37,8 +37,7 @@ function NewBoardModal({ open, handleClose, handleCreateNewBoard }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
         <ModalBox>
           <Typography sx={{ marginBottom: "1rem" }}>Add New Board</Typography>
           <ModalFormControl>
@@ -68,8 +67,7 @@ function NewBoardModal({ open, handleClose, handleCreateNewBoard }) {
             })}
             <ModalTextField
               inputRef={newColumnRef}
-              name="newColumnName"
-            ></ModalTextField>
+              name="newColumnName"></ModalTextField>
             <MyButton onClick={createNewColumn}>+Add New Column</MyButton>
             <MyButton
               type="submit"
@@ -84,8 +82,7 @@ function NewBoardModal({ open, handleClose, handleCreateNewBoard }) {
                 handleCreateNewBoard(newBoardObj);
                 handleClose();
                 setNewBoardColumns([]);
-              }}
-            >
+              }}>
               Create New Board
             </MyButton>
           </ModalFormControl>
