@@ -61,8 +61,8 @@ export default function Column({
           {column.name} ({column?.tasks.length})
         </span>
       </span>
-      {column?.tasks.map((task) => (
-        <>
+      {column?.tasks.map((task, idx) => (
+        <React.Fragment key={idx}>
           <Task
             key={task.title + task.status}
             task={task}
@@ -72,7 +72,7 @@ export default function Column({
           />
           {viewedTask === task.title ? (
             <TaskViewModal
-              key={task.title + task.status}
+              key={task.title}
               open={open}
               handleClose={handleClose}
               task={task}
@@ -85,7 +85,7 @@ export default function Column({
           ) : (
             <></>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
